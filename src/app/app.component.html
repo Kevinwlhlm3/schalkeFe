@@ -1,0 +1,74 @@
+<mat-toolbar color="primary">
+ <span class="imgHeadlineSection"><img class="logoImage" src="assets/images/s04.png" width="24px" height="24px">  23/24</span>
+ <span class="example-spacer"></span>
+ <button mat-raised-button (click)="openAddEditPlayerForm()">
+  <mat-icon>person_add</mat-icon>Spieler Hinzufügen
+ </button>
+</mat-toolbar>
+
+<div class="main-body">
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Suchen" #input>
+  </mat-form-field>
+  
+  <div class="table-container">
+    <table mat-table [dataSource]="dataSource" matSort>
+  
+    
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Spieler </th>
+        <td mat-cell *matCellDef="let row"> 
+          {{row.lastName}}
+      </td>
+      </ng-container>
+  
+      
+      <ng-container matColumnDef="games">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Sp. </th>
+        <td mat-cell *matCellDef="let row"> {{row.games}} </td>
+      </ng-container>
+  
+    
+      <ng-container matColumnDef="goals">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Tore </th>
+        <td mat-cell *matCellDef="let row"> {{row.goals}} </td>
+      </ng-container>
+  
+      
+      <ng-container matColumnDef="assists">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Ass. </th>
+        <td mat-cell *matCellDef="let row"> {{row.assists}} </td>
+      </ng-container>
+  
+       
+       <ng-container matColumnDef="result">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Ges. </th>
+        <td mat-cell *matCellDef="let row"> {{row.result}} </td>
+      </ng-container>
+
+      
+      <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header><mat-icon [ngStyle]="{'color':'#e7e7e7'}"> edit</mat-icon></th>
+        <td mat-cell *matCellDef="let row"> 
+          
+            <mat-icon color="primary" (click)="openEditForm(row)">
+              edit
+            </mat-icon>
+          
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      </tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[6, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  </div>
+</div>
+<app-footer-menu></app-footer-menu>

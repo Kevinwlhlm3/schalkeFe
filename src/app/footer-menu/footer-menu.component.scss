@@ -1,0 +1,18 @@
+footer{
+    position: fixed;
+    bottom: 0;
+    background-color: #3f51b5;
+    width: 100%;
+     
+}
+.example-flex-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    mat-icon{
+        color: white;
+    }
+  }
+
+ 

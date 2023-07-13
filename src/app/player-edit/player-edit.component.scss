@@ -1,0 +1,33 @@
+.content{
+    padding-top: 10px;
+}
+.dialogTitleSection{
+    display: flex;
+    padding: 10% 0 0 10%;
+}
+.deleteIcon{
+    padding-left: 50%;
+    font-size: 25px;
+    padding-top: 3px;
+}
+
+.row{
+    display: flex;
+    gap: 10px;
+
+    .mat-form-field{
+        width: 100%;
+    }
+}
+
+.action{
+    padding: 0px 25px 20px;
+
+    button{
+        flex: 1;
+    } 
+}
+.trikot{
+    color: #3f51b5;
+    font-weight: bold;
+}

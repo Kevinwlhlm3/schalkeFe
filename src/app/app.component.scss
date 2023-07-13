@@ -1,0 +1,43 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .imgHeadlineSection{
+    display: flex;
+  }
+  .logoImage{
+    padding:3px 5px 0 0;
+  }
+
+.main-body{
+  padding-top: 20px;
+  margin: 0 auto;
+  max-width: 1248px;
+  mat-form-field{
+    width: 100%;
+  };
+}
+
+table{
+  width: 100%;
+  table-layout: fixed;
+ }
+ .mat-column-lastName {
+  flex: none;
+  width: 31%;
+ }
+ td.mat-column-games {
+  text-align: center;
+ }
+ td.mat-column-goals {
+  text-align: center;
+ }
+ td.mat-column-assists {
+  text-align: center;
+ }
+ td.mat-column-result {
+  text-align: center;
+ }
+ td.mat-column-edit {
+  padding-right: 5px;
+  cursor: pointer;
+ }
